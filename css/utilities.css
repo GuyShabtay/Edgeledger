@@ -45,3 +45,6 @@ btn-light{
   height: 100%;
   background: rgba(0,0,0,0.6) ;
 }
+.hero *{
+  z-index:10;
+}
