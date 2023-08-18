@@ -37,7 +37,6 @@ img{
   display:flex;
   align-items: center;
   justify-content: space-between;
-  border:3px solid blue;
   background-color: #333;
   color:white;
   opacity: 0.8;
@@ -53,10 +52,11 @@ img{
   margin: 0 5px;
 }
 .navbar a:hover{
-  color:white;
-  padding: 10px 20px;
-  margin: 0 5px;
+  border-bottom:#28a745 2px solid;
 }
 .navbar ul{
   display:flex;
+}
+.navbar .logo{
+  font-weight: 400;
 }
