@@ -52,6 +52,11 @@ img{
   padding: 10px 20px;
   margin: 0 5px;
 }
+.navbar a:hover{
+  color:white;
+  padding: 10px 20px;
+  margin: 0 5px;
+}
 .navbar ul{
   display:flex;
 }
