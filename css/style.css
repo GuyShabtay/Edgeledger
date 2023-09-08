@@ -65,7 +65,7 @@ img{
   font-weight: 400;
 }
 .navbar .logo img{
-  width:1.7vw;
+  width:30px;
   transform: rotate(20deg);
 }
 .hero{
@@ -210,4 +210,8 @@ margin-bottom: 30px;
     flex:100%;
     max-width: 100%;
   }
+  .hero .content h1{
+    font-size: 40px;
+  }
+
 }
