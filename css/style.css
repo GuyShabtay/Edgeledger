@@ -116,7 +116,10 @@ margin-bottom: 15px;
 }
 
 .team img{
-  border-radius: 50%;
+  border-radius: 50px;
+  width: 20vw;
+  /* height: 40vw; */
+  margin: 0 2vw;
 }
 
 /* callback form */
