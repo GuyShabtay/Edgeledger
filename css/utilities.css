@@ -1,6 +1,6 @@
 /* text colors */
 .text-primary{
-  color:#28a745;
+  color:#2E9093;
 }
 
 .text-secondary{
@@ -12,7 +12,7 @@
   display:inline-block;
   padding: 10px 30px;
   color:white;
-  background: #28a745;
+  background: #2E9093;
   border:none;
   border-radius: 5px;
 }
@@ -20,11 +20,11 @@
   opacity:0.9;
 }
 .btn-primary, .bg-primary{
-  background: #28a745;
+  background: #2E9093;
   color:white;
 }
 .btn-secondary, .bg-secondary{
-  background: #0284d0;
+  background: #6F7597;
   color:white;
 }
 .btn-dark, .bg-dark{
