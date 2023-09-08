@@ -64,6 +64,10 @@ img{
 .navbar .logo{
   font-weight: 400;
 }
+.navbar .logo img{
+  width:1.7vw;
+  transform: rotate(20deg);
+}
 .hero{
   background: url(../images/home/showcase.jpg) no-repeat center center/cover;
   height: 100vh;
