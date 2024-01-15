@@ -244,10 +244,10 @@
     </main>
     <footer class="footer bg-dark">
       <div class="social">
-        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/software-engineering-student/"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/software-engineering-student/"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/software-engineering-student/"><i class="fab fa-youtube fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/software-engineering-student/"><i class="fab fa-linkedin fa-2x"></i></a>
       </div>
       <p>copyright &copy; 2023 - X-Drone</p>
     </footer>
@@ -294,6 +294,30 @@
       );
   }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const submitButton = document.getElementById('submit');
+    const form = document.querySelector('.callback-form');
+
+    submitButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      form.reset();
+
+
+      // You can perform any additional form processing here
+
+      // Show "Sent" on the screen
+      const sentMessage = document.createElement('div');
+      sentMessage.textContent = 'Sent!';
+      sentMessage.classList.add('sent-message');
+      form.appendChild(sentMessage);
+
+      // Clear the form after 2 seconds
+      setTimeout(function () {
+        sentMessage.remove();
+      }, 3000);
+    });
+  });
     </script>
   </body>
 </html>
