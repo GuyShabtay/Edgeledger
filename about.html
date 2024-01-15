@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/aaee1281c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Read About Us</title>
+  </head>
+  <body id="home">
+    <header class="about bg-secondary">
+      <div id="navbar" class="navbar top">
+        <h1 class="logo">
+          <span class="text-primary"
+            ><img src="/images/home/drone icon.png" alt="" /> X</span
+          >-Drone
+        </h1>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#cases">Cases</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <h1>About Us</h1>
+      </div>
+    </header>
+    <main>
+      <article class="flex-columns">
+        <div class="row">
+          <div class="column">
+            <div class="column-1">
+              <img src="images/about/chip.jpg" alt="" id="about-img" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="column-2 bg-light">
+              <h2>This is what we do</h2>
+
+              <p>
+                Immerse yourself in the narrative of X-Drone, a venture where
+                our identity is intertwined with the fabric of cutting-edge
+                technology. Our foundational ethos revolves around an insatiable
+                appetite for innovation and an unwavering pursuit of excellence
+                in the ever-evolving world of drones.
+              </p>
+              <p>
+                X-Drone is not content with merely keeping pace; we thrive on
+                leading the charge into uncharted technological territories. Our
+                commitment to this vision materializes in the incorporation of
+                state-of-the-art sensors, the utilization of avant-garde
+                materials, and the implementation of groundbreaking software
+                solutions in every drone we bring to life.
+              </p>
+              <p>
+                Each drone bearing the X-Drone insignia represents a testament
+                to our dedication to engineering precision and unparalleled
+                performance. As we chart new territories in the drone industry,
+                our mission is clear — to set new standards, redefine
+                possibilities, and provide enthusiasts with a seamless blend of
+                technology and awe-inspiring performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="footer bg-dark">
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+      </div>
+      <p>copyright &copy; 2023 - X-Drone</p>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      let scrolled = false;
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove('top');
+          if (!scrolled) {
+            navbar.style.transform = 'translateY(-70px)';
+          }
+          setTimeout(function () {
+            navbar.style.transform = 'translateY(0)';
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add('top');
+          scrolled = false;
+        }
+      };
+    </script>
+  </body>
+</html>
