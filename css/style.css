@@ -55,7 +55,7 @@ img{
   padding: 10px 20px;
   margin: 0 5px;
 }
-.navbar a:hover{
+.navbar li a:hover{
   border-bottom:#2E9093 2px solid;
 }
 .navbar ul{
