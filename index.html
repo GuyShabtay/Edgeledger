@@ -15,6 +15,7 @@
   </head>
   <body id="home">
     <header class="hero">
+      <div class="blur-bg">
       <div id="navbar" class="navbar top">
         <a href="#home">
         <h1 class="logo">
@@ -40,6 +41,7 @@
           ><i class="fas fa-chevron-right"></i> Read More</a
         >
       </div>
+    </div>
     </header>
     <main>
       <!-- about: icons -->
@@ -320,6 +322,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 3000);
     });
   });
+
+
+ 
+
+
+const showcase= document.querySelector(".hero")
+const blurBgElement = document.querySelector(".blur-bg");
+
+
+ const backgroundImage = new Image();
+backgroundImage.src = '../images/home/showcase.jpg';
+backgroundImage.onload = function() {
+  showcase.classList.add("loaded")
+  blurBgElement.style.backdropFilter = "none"; 
+
+};
+
+
     </script>
   </body>
 </html>
