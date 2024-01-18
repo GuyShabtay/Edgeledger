@@ -107,40 +107,40 @@
         </header>
         <div class="row">
           <div class="column">
-            <a href="images/cases/cases1.jpg" data-lightbox="cases">
-              <img src="images/cases/cases1.jpg" alt="" />
+            <a href="images/cases/cases1.jpg" data-lightbox="cases" >
+              <img src="images/cases/cases1.jpg" alt="" loading="lazy"/>
             </a>
             <a href="images/cases/cases2.jpg" data-lightbox="cases">
-            <img src="images/cases/cases2.jpg" alt="" />
+            <img src="images/cases/cases2.jpg" alt="" loading="lazy"/>
           </a>
           </div>
           <div class="column">
             <a href="images/cases/cases3.jpg" data-lightbox="cases">
-            <img src="images/cases/cases3.jpg" alt="" />
+            <img src="images/cases/cases3.jpg" alt="" loading="lazy"/>
           </a>
 
             <a href="images/cases/cases4.jpg" data-lightbox="cases">
-            <img src="images/cases/cases4.jpg" alt="" />
+            <img src="images/cases/cases4.jpg" alt="" loading="lazy"/>
           </a>
 
           </div>
           <div class="column">
             <a href="images/cases/cases5.jpg" data-lightbox="cases">
-            <img src="images/cases/cases5.jpg" alt="" />
+            <img src="images/cases/cases5.jpg" alt="" loading="lazy"/>
           </a>
 
             <a href="images/cases/cases6.jpg" data-lightbox="cases">
-            <img src="images/cases/cases6.jpg" alt="" />
+            <img src="images/cases/cases6.jpg" alt="" loading="lazy"/>
           </a>
 
           </div>
           <div class="column">
             <a href="images/cases/cases7.jpg" data-lightbox="cases">
-            <img src="images/cases/cases7.jpg" alt="" />
+            <img src="images/cases/cases7.jpg" alt="" loading="lazy"/>
           </a>
 
             <a href="images/cases/cases8.jpg" data-lightbox="cases">
-            <img src="images/cases/cases8.jpg" alt="" />
+            <img src="images/cases/cases8.jpg" alt="" loading="lazy"/>
           </a>
           </div>
         </div>
@@ -152,7 +152,7 @@
         <div class="row">
           <div class="column">
             <div class="column-1">
-              <img src="images/home/remote control.jpg" alt="" />
+              <img src="images/home/remote control.jpg" alt="" loading="lazy"/>
             </div>
           </div>
           <div class="column">
@@ -161,7 +161,7 @@
               <h2>Advanced Remote Control</h2>
               <p>At the heart of our drone technology lies the cutting-edge Advanced Remote Control, a game-changer in the world of aerial exploration. Seamlessly connecting with your tablet, this controller opens up a world of possibilities for both novice and experienced drone enthusiasts. </p>
 
-              <a href="blog.html" class="btn btn-outline">
+              <a href="blog.html" class="btn btn-outline" loading="lazy">
                 <i class="fas fa-chevron"></i>
                 Read About Our Technologies
               </a>
@@ -182,17 +182,17 @@
         </header>
         <div class="flex-items">
           <div>
-            <img src="images/team/person1.jpg" alt="" />
+            <img src="images/team/person1.jpg" alt="" loading="lazy"/>
             <h4>Ethan Mitchell</h4>
             <p>Presidendt</p>
           </div>
           <div>
-            <img src="images/team/person2.jpg" alt="" />
+            <img src="images/team/person2.jpg" alt="" loading="lazy" />
             <h4>Olivia Williams</h4>
             <p>Vice Presidendt</p>
           </div>
           <div>
-            <img src="images/team/person3.jpg" alt="" />
+            <img src="images/team/person3.jpg" alt="" loading="lazy"/>
             <h4>Liam Anderson</h4>
             <p>Marketing Head</p>
           </div>
@@ -205,7 +205,7 @@
         <div class="row">
           <div class="column">
             <div class="column-1">
-              <img src="images/home/contact.jpg" alt="" />
+              <img src="images/home/contact.jpg" alt="" loading="lazy"/>
             </div>
           </div>
           <div class="column">
@@ -299,29 +299,71 @@
   }
 });
 
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    const submitButton = document.getElementById('submit');
-    const form = document.querySelector('.callback-form');
+  const submitButton = document.getElementById('submit');
+  const form = document.querySelector('.callback-form');
+  const submitMessage = document.createElement('div');
 
-    submitButton.addEventListener('click', function (e) {
-      e.preventDefault();
+  submitButton.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (validateForm()) {
       form.reset();
-
 
       // You can perform any additional form processing here
 
       // Show "Sent" on the screen
-      const sentMessage = document.createElement('div');
-      sentMessage.textContent = 'Sent!';
-      sentMessage.classList.add('sent-message');
-      form.appendChild(sentMessage);
+      submitMessage.textContent = 'Sent!';
+      submitMessage.classList.remove('error-message');
 
-      // Clear the form after 2 seconds
-      setTimeout(function () {
-        sentMessage.remove();
-      }, 3000);
-    });
+      submitMessage.classList.add('sent-message');
+      form.appendChild(submitMessage);
+
+     
+    }else{
+      submitMessage.textContent = 'Please fill in all the fields';
+      submitMessage.classList.remove('sent-message');
+
+      submitMessage.classList.add('error-message');
+      form.appendChild(submitMessage);
+
+    }
+    setTimeout(function () {
+      submitMessage.remove();
+    }, 3000);
   });
+
+  function validateForm() {
+    const inputs = form.querySelectorAll('input[type="text"], input[type="email"]');
+    let isValid = true;
+
+    inputs.forEach(function (input) {
+      if (input.value.trim() === '') 
+        isValid = false;
+       
+    });
+
+    return isValid;
+  }
+
+  function displayErrorMessage(input, message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.textContent = message;
+    errorDiv.classList.add('error-message');
+    input.parentNode.appendChild(errorDiv);
+  }
+
+  function removeErrorMessage(input) {
+    const errorDiv = input.parentNode.querySelector('.error-message');
+    if (errorDiv) {
+      errorDiv.remove();
+    }
+  }
+});
+
 
 
  
@@ -338,7 +380,14 @@ backgroundImage.onload = function() {
   blurBgElement.style.backdropFilter = "none"; 
 
 };
+let img1URL='images/cases/cases1 small.jpg';
 
+
+
+const img1 = document.querySelector(".img1")
+if (img.complete) 
+    // img1.classList.remove("blurred");
+    img1URL='images/cases/cases1.jpg';
 
     </script>
   </body>
